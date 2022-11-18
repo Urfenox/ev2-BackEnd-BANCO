@@ -57,7 +57,7 @@ def mostrarAgregar(request):
         if form.is_valid():
             # Creamos un objeto 'Solicitud' y lo habitamos
             #   con los datos del POST del formulario
-            s = Solicitud(request.POST['sId'], request.POST['nombre'], request.POST['cantidad'], datetime.strptime(request.POST['fecha'], "%d/%m/%Y").date())
+            s = Solicitud(request.POST['sId'], request.POST['nombre'], request.POST['cantidad'], datetime.strptime(request.POST['fecha'], "%Y-%m-%d").date())
             # Guardamos el objeto en la DB
             s.save()
             # Redireccionamos a Inicio

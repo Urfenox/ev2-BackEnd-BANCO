@@ -1,0 +1,16 @@
+Hola profe. Seguro tendra problemas para ejecutar el runserver de manage.py.
+
+Le explico lo que se debe hacer.
+
+1) El problema: Las tablas y el makemigrations
+Cuando una maquina ejecuta el comando makemigrations y migrate, Django crea las tablas y todo muy bien, pero, cuando otra maquina usa el mismo proyecto tendra problemas:
+- Las tablas no existen
+- El comando makemigrations y migrate no funcionan
+
+La solucion
+Dirigirse a urls.py del proyecto raiz, comentar la ultima linea (path('gerencia/', include('Gerencia.urls')))
+Luego ejecutar los comandos makemigration y migrate
+Luego descomentar la linea.
+Ejecutar el runserver
+
+Y listo. Deberia funcionar... deberia...
